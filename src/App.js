@@ -1,7 +1,18 @@
+import React, {useState, useEffect} from 'react';
 import Card from './components/Card';
-import data from './data.json'
+
+// import data from './data.json'
 
 function App(){
+  const [itemList, setItemList] = useState([]);
+
+  useEffect(()=> {
+    fetch('https://www.breakingbadapi.com/api/characters')
+    .then(response => response.json())
+    .then((data)=> setItemList(data))
+    // .then((data) => console.log('data: ',  data))
+
+  }, [])
 
 
   return(
@@ -14,7 +25,7 @@ function App(){
       </header>
 
       <div className = 'cards'>
-        {data.map((item)=> (
+        {itemList.map((item)=> (
           <Card key= {item.char_id} item={item} />
 
         ))}
