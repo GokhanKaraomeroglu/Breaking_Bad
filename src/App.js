@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from './components/Card';
+import data from './data.json'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+function App(){
+
+
+  return(
+    <div className = 'App'>
+      <header className = 'header'>
+      <img 
+      src = "https://www.logolynx.com/images/logolynx/55/55a537ca9549600cf7d1d0b274b3bc61.png"
+      alt = 'Breaking Bad Logo'
+      />
       </header>
-    </div>
-  );
-}
 
+      <div className = 'cards'>
+        {data.map((item)=> (
+          <Card key= {item.char_id} item={item} />
+
+        ))}
+      </div>
+      
+    </div>
+  )
+}
 export default App;
