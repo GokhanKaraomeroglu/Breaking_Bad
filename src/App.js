@@ -8,13 +8,13 @@ function App(){
   const [itemList, setItemList] = useState([]);
 
   useEffect(()=> {
-    // fetch('https://www.breakingbadapi.com/api/characters')
-    // .then(response => response.json())
-    // .then((data)=> setItemList(data))
-    // .then((data) => console.log('data: ',  data))
-    axios
-    .get('https://www.breakingbadapi.com/api/characters')
-    .then ((res)=> setItemList(res.data));
+    fetch('https://www.breakingbadapi.com/api/characters')
+    .then(response => response.json())
+    .then((data)=> setItemList(data))
+    .then((data) => console.log('data: ',  data))
+    // axios
+    // .get('https://www.breakingbadapi.com/api/characters')
+    // .then ((res)=> setItemList(res.data));
 
   }, [])
 
