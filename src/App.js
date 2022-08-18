@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import Card from './components/Card';
-
 // import data from './data.json'
 
 function App(){
@@ -11,13 +10,11 @@ function App(){
     fetch('https://www.breakingbadapi.com/api/characters')
     .then(response => response.json())
     .then((data)=> setItemList(data))
-    .then((data) => console.log('data: ',  data))
+    // .then((data) => console.log('data: ',  data))
     // axios
     // .get('https://www.breakingbadapi.com/api/characters')
     // .then ((res)=> setItemList(res.data));
-
   }, [])
-
 
   return(
     <div className = 'App'>
@@ -31,10 +28,8 @@ function App(){
       <div className = 'cards'>
         {itemList.map((item)=> (
           <Card key= {item.char_id} item={item} />
-
         ))}
-      </div>
-      
+      </div>    
     </div>
   )
 }
